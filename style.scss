@@ -1,14 +1,60 @@
-#app {
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 
-.fruit {
-  button {
-    display: block;
+#app {
+  width: 100%;
+  position: relative;
+
+  h1 {
+    text-align: center;
+    margin-top: 24px;
+  }
+}
+
+.fruit-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 24px;
+  .fruit {
+    max-width: 240px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex: auto;
+    padding: 16px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    border: 1px solid rgb(200, 200, 200);
+
+    h3 {
+      width: 100%;
+      justify-content: center;
+      margin-top: 0px;
+      margin-bottom: 16px;
+      display: flex;
+    }
+    span {
+      margin-right: 8px;
+      font-weight: bold;
+    }
+    button {
+      display: block;
+      background-color: rgb(40, 200, 120);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
   }
 }

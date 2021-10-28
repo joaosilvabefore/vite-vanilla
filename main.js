@@ -5,18 +5,27 @@ const fruits = [
   { name: 'Strowberry', price: 8.4 },
 ];
 
-let appHtml = `
-  <h1>Fruits</h1>
+const renderFruits = (fruits) => {
+  let result = ``;
+  fruits.forEach((fruit) => {
+    result += `
+      <div class="fruit">
+        <h3>${fruit.name}</h3>
+        <span>$ ${fruit.price}</span>
+        <button>Buy</button>
+      </div>
+    `;
+  });
+  return result;
+};
+
+let fruitsLits = `
+  <div class="fruit-list">
+    ${renderFruits(fruits)}
+  </div>
 `;
 
-fruits.forEach((fruit) => {
-  appHtml += `
-    <div class="fruit">
-      <h3>${fruit.name}</h3>
-      <span>$ ${fruit.price}</span>
-      <button>Buy</button>
-    </div>
-  `;
-});
-
-document.querySelector('#app').innerHTML = appHtml;
+document.querySelector('#app').innerHTML = `
+  <h1>Fruit list with Vite</h1>
+  ${fruitsLits}
+`;
